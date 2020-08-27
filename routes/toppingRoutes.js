@@ -9,31 +9,10 @@ router.get('/toppings', (req, res) => {
         .catch(err => console.log(err))
 })
 
-// GET one topping
-router.get('/toppings/:id', (req, res) => {
-    Topping.findOne( {where: { id: req.params.id }})
-    .catch(err => console.log(err))
-})
-
-// POST one topping
+// CREATE topping
 router.post('/toppings', (req, res) => {
     Topping.create(req.body)
-        .then(toppings => res.json(toppings))
+        .then(topping => res.json(topping))
         .catch(err => console.log(err))
 })
-
-// PUT one topping
-router.put('/toppings/:id', (req, res) => {
-    Topping.update(req.body, { where: {id: req.params.id } })
-        .then(() => res.sendStatus(200))
-        .catch(err => console.log(err))
-})
-
-// DELETE one topping
-router.delete('/toppings/:id', (req, res) => {
-    Topping.destroy({ where: { id: req.params.id } })
-    .then(() => res.sendStatus(200))
-    .catch(err => console.log(err))
-})
-
 module.exports = router
