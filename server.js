@@ -9,6 +9,6 @@ app.use(express.json())
 
 app.use(require('./routes'))
 
-require('./db').sync()
-    .then(() => app.listen(3000))
-    .catch(err => console.log(err))
+require('./db').sync({force: true})
+  .then(() => app.listen(3000))
+  .catch(err => console.log(err))
