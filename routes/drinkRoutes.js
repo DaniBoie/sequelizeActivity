@@ -11,7 +11,10 @@ router.get('/drinks', (req, res) => {
 // Create one drink
 router.post('/drinks', (req,res) => {
   Drink.create(req.body)
-  .then(drink => res.json(drink))
+    .then(drink => {
+      Drink.findOne({ where: { id: drink.id }, include: [Bean, Syrup, Topping] })
+        .then(fullDrink => res.json(fullDrink))
+    })
   .catch(err => console.log(err))
 })
 
