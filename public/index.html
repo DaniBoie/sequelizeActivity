@@ -10,6 +10,7 @@
 
 </head>
 <body>
+  <h1 class="center">Coffee Designer</h1>
     <div class="row">
         <form class="col s12">
           <div class="row">
@@ -17,22 +18,28 @@
               <input placeholder="Drink Name" id="drinkName" type="text" class="validate">
               <label for="drinkName">Drink Name</label>
             </div>
-            <div class="input-field col s6">
-              <input id="beanType" type="text" class="validate">
+            <div class="col s6">
               <label for="beanType">Bean Type</label>
+              <select name="bean" id="bean">
+              <option value="null">Select a Bean</option>
+              </select>
             </div>
           </div>
           
           <div class="row">
-            <div class="input-field col s12">
-              <input id="syrup" type="text" class="validate">
+            <div class="col s12">
               <label for="syrup">Syrup</label>
+              <select name="syrup" id="syrup">
+              <option value="null">Select a Syrup</option>
+              </select>
             </div>
           </div>
           <div class="row">
-            <div class="input-field col s12">
-              <input id="topping" type="text" class="validate">
+            <div class="col s12">
               <label for="topping">Topping</label>
+              <select name="topping" id="topping">
+              <option value="null">Select a Topping</option>
+              </select>
             </div>
           </div>
           <div class="row">
@@ -42,6 +49,8 @@
           </div>
         </form>
       </div>
+      
+      <div id="drinks"></div>
    
     
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
