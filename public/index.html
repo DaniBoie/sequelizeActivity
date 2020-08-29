@@ -3,48 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coffee Designer</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-    <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <input placeholder="Drink Name" id="drinkName" type="text" class="validate">
-              <label for="drinkName">Drink Name</label>
-            </div>
-            <div class="input-field col s6">
-              <input id="beanType" type="text" class="validate">
-              <label for="beanType">Bean Type</label>
-            </div>
-          </div>
-          
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="syrup" type="text" class="validate">
-              <label for="syrup">Syrup</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="topping" type="text" class="validate">
-              <label for="topping">Topping</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12">
-                <a class="waves-effect waves-light btn-large" button id="makeDrink">Make Drink</a>
-            </div>
-          </div>
-        </form>
-      </div>
-   
-    
+    <h1>Coffee Designer</h1>
+    <form>
+      <p>
+        <label for="name">name</label>
+        <input type="text" name="name" id="name">
+      </p>
+      <p>
+        <label for="bean">bean</label>
+        <select name="bean" id="bean"><option value="null">Select a bean</option></select>
+      </p>
+      <p>
+        <label for="syrup">syrup</label>
+        <select name="syrup" id="syrup"><option value="null">Select a syrup</option></select>
+      </p>
+      <p>
+        <label for="topping">topping</label>
+        <select name="topping" id="topping"><option value="null">Select a topping</option></select>
+      </p>
+    </form>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./app.js"></script>
 </body>
 </html>

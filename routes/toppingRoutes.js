@@ -9,10 +9,4 @@ router.get('/toppings', (req, res) => {
         .catch(err => console.log(err))
 })
 
-// CREATE topping
-router.post('/toppings', (req, res) => {
-    Topping.create(req.body)
-        .then(topping => res.json(topping))
-        .catch(err => console.log(err))
-})
 module.exports = router

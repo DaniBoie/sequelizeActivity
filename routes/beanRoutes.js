@@ -9,11 +9,4 @@ router.get('/beans', (req, res) => {
       .catch(err => console.log(err))
   })
 
-// CREATE a bean
-router.post('/beans', (req,res) => {
-  Bean.create(req.body)
-  .then(bean => res.json(bean))
-  .catch(err => console.log(err))
-})
-
 module.exports = router

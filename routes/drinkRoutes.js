@@ -1,9 +1,10 @@
 const router = require('express').Router()
 const { Drink, Bean, Syrup, Topping } = require('../models')
+const { findOne } = require('../models/Bean')
 
 // GET all drinks
 router.get('/drinks', (req, res) => {
-  Drink.findAll({include: [Bean,Syrup,Topping]})
+  Drink.findAll({include: [Bean, Syrup, Topping]})
     .then(drinks => { res.json(drinks) })
     .catch(err => console.log(err))
 })
@@ -11,7 +12,10 @@ router.get('/drinks', (req, res) => {
 // Create one drink
 router.post('/drinks', (req,res) => {
   Drink.create(req.body)
-  .then(drink => res.json(drink))
+  .then(drink => {
+    Drink.findOne({ where: { id: drink.id }, include: [Bean, Syrup, Topping] })
+      .then(fullDrink => res.json(fullDrink))
+  })
   .catch(err => console.log(err))
 })
 

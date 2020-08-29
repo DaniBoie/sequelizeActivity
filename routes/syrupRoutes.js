@@ -9,11 +9,4 @@ router.get('/syrups', (req, res) => {
     .catch(err => console.log(err))
 })
 
-// CREATE syrup
-router.post('/syrups', (req, res) => {
-  Syrup.create(req.body)
-    .then(syrup => res.json(syrup))
-    .catch(err => console.log(err))
-})
-
 module.exports = router
